@@ -2,18 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
+
 package views;
+// importaciones 
+// cerrar ventana 
+import methods.cerrarVentana;
 
 /**
  *
  * @author x4mv
  */
-public class menu extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form menu
      */
-    public menu() {
+    public Menu() {
         initComponents();
     }
 
@@ -34,11 +39,17 @@ public class menu extends javax.swing.JFrame {
         lblAreaDesarrollo = new javax.swing.JLabel();
         lblBancoPanel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu");
 
         btnAreaDesarrollo.setText("Area Desarrollo");
 
         btnBancoUsuario.setText("Banker User");
+        btnBancoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBancoUsuarioActionPerformed(evt);
+            }
+        });
 
         btnBancoPanel.setText("Banco Panel");
 
@@ -102,6 +113,16 @@ public class menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBancoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBancoUsuarioActionPerformed
+        
+        // Al hacer click en el btn de ingresar como Banco(cliente) aparece una ventana de inicio de sesion
+        cerrarVentana.cerrar(this);
+        InicioSesion view_inicioSesion = new InicioSesion();
+        view_inicioSesion.setVisible(true);
+        
+        
+    }//GEN-LAST:event_btnBancoUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -119,20 +140,21 @@ public class menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new menu().setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }
