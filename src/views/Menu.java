@@ -43,6 +43,11 @@ public class Menu extends javax.swing.JFrame {
         setTitle("Menu");
 
         btnAreaDesarrollo.setText("Area Desarrollo");
+        btnAreaDesarrollo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAreaDesarrolloActionPerformed(evt);
+            }
+        });
 
         btnBancoUsuario.setText("Banker User");
         btnBancoUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +57,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         btnBancoPanel.setText("Banco Panel");
+        btnBancoPanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBancoPanelActionPerformed(evt);
+            }
+        });
 
         lblBancoEcosistema.setText("Bank-EcoSystem");
         lblBancoEcosistema.setToolTipText("");
@@ -122,6 +132,25 @@ public class Menu extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnBancoUsuarioActionPerformed
+
+    private void btnAreaDesarrolloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaDesarrolloActionPerformed
+        // TODO add your handling code here:
+        
+        // abrir el menu de inicio de sesio 
+        cerrarVentana.cerrar(this);
+        InicioSesion view_inicioSesion = new InicioSesion();
+        view_inicioSesion.setVisible(true);
+        
+    }//GEN-LAST:event_btnAreaDesarrolloActionPerformed
+
+    private void btnBancoPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBancoPanelActionPerformed
+        // TODO add your handling code here:
+        
+        // abrir el menu de inicio de sesion
+        cerrarVentana.cerrar(this);
+        InicioSesion view_inicioSesion = new InicioSesion();
+        view_inicioSesion.setVisible(true);
+    }//GEN-LAST:event_btnBancoPanelActionPerformed
 
     /**
      * @param args the command line arguments
