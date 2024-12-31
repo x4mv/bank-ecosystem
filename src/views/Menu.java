@@ -150,6 +150,8 @@ public class Menu extends javax.swing.JFrame {
         cerrarVentana.cerrar(this);
         InicioSesion view_inicioSesion = new InicioSesion();
         view_inicioSesion.setVisible(true);
+        
+        // probando
     }//GEN-LAST:event_btnBancoPanelActionPerformed
 
     /**
